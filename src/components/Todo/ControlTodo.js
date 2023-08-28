@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { Trash2, Pencil, CircleDollarSign } from 'lucide-react';
+import { DateFormatted } from '../../helpers/helper';
+
 const ControlTodo = () => {
     const [todoLists, setTodoList] = useState([
         {
             roomNumber: "618",
-            data: '02.07.2023',
+            date: new Date().getTime().toString(),
             comment: "что-то случилось",
+            paymantTo: ''
         },
         {
             roomNumber: "545",
-            data: '02.07.2023',
+            date: new Date().getTime().toString(),
             comment: "что-то случилось",
         },
     ]);
@@ -21,13 +24,13 @@ const ControlTodo = () => {
                     <h1>
                         Контроль оплаты
                     </h1>
-                    
+
                 </div>
                 {todoLists.map((item) => (
                     <div className='box' key={item.roomNumber}>
                         <div className='boxHeader'>
                             <h6>Комнатa: <b className='boxHeaderText'>{item.roomNumber}</b></h6>
-                            <p>До: <b>{item.data}</b></p>
+                            <p>До: <b>{DateFormatted(item.date)}</b></p>
                         </div>
                         <div className='boxBody'>
                             {item.comment}
