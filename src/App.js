@@ -63,7 +63,7 @@ function App()
                     <SidebarItem icon={<Boxes size={20} />} text="Pm" />
                 </span>
                 <span onClick={(() => setPageData('/Miniinfo'))}>
-                    <SidebarItem icon={<Info size={20} />} text="Дополнительные информации" /> <hr className="my-3" />
+                    <SidebarItem icon={<Info size={20} />} text="Доп. инфо" /> <hr className="my-3" />
                 </span>
                 <span onClick={(() => setPageData('/Setings'))}>
                     <SidebarItem icon={<Settings size={20} />} text="Settings" />

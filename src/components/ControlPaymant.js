@@ -1,23 +1,47 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ControlTodo from './Todo/ControlTodo'
 import MiniBarTodo from './Todo/MiniBarTodo'
 import OtherTodo from './Todo/OtherTodo'
+import TodoMenu from './TodoMenu';
 
-export const ControlPaymant = () => {
-  
-  return (
-    <>
-    <div>
-      <div className='bodyControl'>
-        <ControlTodo/>
-        <MiniBarTodo/>
-        <OtherTodo/>
-      </div>
-      
-    </div>
-      <div className='endControl'>
+export const ControlPaymant = () => 
+{
+    const [TodoMenuData, setTodoMenuData] = useState({});
+    const [TodoMenuOpen, setTodoMenuOpen] = useState(false);
 
-      </div>
-    </>
-  )
+    return (
+        <>
+            <TodoMenu 
+                TodoMenuData={TodoMenuData}
+                setTodoMenuData={setTodoMenuData}
+                TodoMenuOpen={TodoMenuOpen}
+            />
+            <div>
+                <div className='bodyControl'>
+                    <ControlTodo 
+                        TodoMenuData={TodoMenuData}
+                        setTodoMenuData={setTodoMenuData}
+                        setTodoMenuOpen={setTodoMenuOpen}
+                        TodoMenuOpen={TodoMenuOpen}
+                    />
+                    <MiniBarTodo 
+                        TodoMenuData={TodoMenuData}
+                        setTodoMenuData={setTodoMenuData}
+                        setTodoMenuOpen={setTodoMenuOpen}
+                        TodoMenuOpen={TodoMenuOpen}
+                    />
+                    <OtherTodo 
+                        TodoMenuData={TodoMenuData}
+                        setTodoMenuData={setTodoMenuData}
+                        setTodoMenuOpen={setTodoMenuOpen}
+                        TodoMenuOpen={TodoMenuOpen}
+                    />
+                </div>
+
+            </div>
+            <div className='endControl'>
+
+            </div>
+        </>
+    )
 }

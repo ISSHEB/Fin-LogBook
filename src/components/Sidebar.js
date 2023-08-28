@@ -8,7 +8,7 @@ export default function Sidebar({ children }) {
 
     return (
         <aside className="h-screen">
-            <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+            <nav className="h-full flex flex-col bg-white border-r shadow-sm sidebar_new">
                 <div className="p-4 pb-2 flex justify-between items-center">
                     <h1 className="w-10 h-10 rounded-md">
                         LogBook
@@ -26,9 +26,9 @@ export default function Sidebar({ children }) {
                 </SidebarContext.Provider>
 
                 <div className="border-t flex p-3">
-                   
+
                 </div>
-                
+
             </nav>
         </aside>
     )
@@ -40,14 +40,14 @@ export function SidebarItem({ icon, text, active, alert }) {
     return (
         <li
             className={`
-        relative flex items-center py-2 px-3 my-1
-        font-medium rounded-md cursor-pointer
-        transition-colors group
-        ${active
-                    ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-                    : "hover:bg-indigo-50 text-gray-600"
-                }
-    `}
+                relative flex items-center py-2 px-3 my-1
+                font-medium rounded-md cursor-pointer
+                transition-colors group
+                ${active
+                            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                            : "hover:bg-indigo-50 text-gray-600"
+                        }
+            `}
         >
             {icon}
             <span
@@ -66,11 +66,11 @@ export function SidebarItem({ icon, text, active, alert }) {
             {!expanded && (
                 <div
                     className={`
-          absolute left-full rounded-md px-2 py-1 ml-6
-          bg-indigo-100 text-indigo-800 text-sm
-          invisible opacity-20 -translate-x-3 transition-all
-          group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
-      `}
+                        absolute left-full rounded-md px-2 py-1 ml-6
+                        bg-indigo-100 text-indigo-800 text-sm
+                        invisible opacity-20 -translate-x-3 transition-all
+                        group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+                    `}
                 >
                     {text}
                 </div>
