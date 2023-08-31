@@ -7,7 +7,6 @@
 
 }
 .body{
-  padding: 20px;
   background-color:rgb(172, 247, 233);
   width: 100%;
   overflow: hidden;
@@ -102,6 +101,7 @@ h1{
   transform: scale(1.05);
   background-color:#218b9e;
   color: rgb(172, 247, 233);
+  border-radius: 20px;
 }
 
 .scroll{
@@ -204,6 +204,7 @@ h1{
     width: 100%;
     height: calc(100vh - 100px);
     overflow-y: scroll;
+    padding: 0 10px;
 }
 
 .bodyInfoRow::-webkit-scrollbar {

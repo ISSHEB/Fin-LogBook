@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, PlusSquare } from 'lucide-react';
+import { Trash2, Pencil, PlusCircle } from 'lucide-react';
 
 const MiniBarTodo = ({ TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen }) => {
 
@@ -31,7 +31,7 @@ const MiniBarTodo = ({ TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuO
         <h1 className='m-10'>
           Минибар
         </h1>
-        <PlusSquare className='blockControlHeader_icon' />
+        <PlusCircle className='blockControlHeader_icon' />
       </div>
       <div className='bodyInfoRow'>
       {todoMinibar.map((item, i) => (
@@ -42,7 +42,7 @@ const MiniBarTodo = ({ TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuO
           </div>
           
           <div className='boxEnd'>
-            <p>25/08</p>
+            <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
             <div className='boxEndIcon'>
               <Pencil size={20} className="icon" />
               <Trash2 size={20} className="icon" />

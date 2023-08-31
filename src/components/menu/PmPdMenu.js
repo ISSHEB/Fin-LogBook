@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronLast } from 'lucide-react';
 
-export default function ({ PmPdMenuData, setPmPdMenuData, PmPdMenuOpen }) {
+export default function ({ PmPdMenuData, setPmPdMenuData, NoPmPdMenuOpen, setNoPmPdMenuOpen }) {
     var [ActionData, setActionData] = useState({})
 
     useEffect(() => {
@@ -24,17 +24,17 @@ export default function ({ PmPdMenuData, setPmPdMenuData, PmPdMenuOpen }) {
         };
     }, [PmPdMenuData]);
 
-  
+
 
     return (
         <>
 
-            <div className="TodoMenu" style={{ right: `${PmPdMenuOpen ? '0' : "-100%"}` }}>
+            <div className="TodoMenu" style={{ right: `${NoPmPdMenuOpen ? '0' : "-100%"}` }}>
                 <div className="TodoMenu_row">
 
                     <div className="TodoMenu_list">
                         <div className="TodoMenu_list_line">
-                            <ChevronLast className='arrowRight' />
+                            <ChevronLast className='arrowRight' onClick={() => setNoPmPdMenuOpen(false)} />
                             <h1 className='headerTextMenu'>Комната:</h1>
                             <b className='textMenu'> {ActionData['TodoMenu_name'] ? ActionData['TodoMenu_name'] : ''}</b>
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {  ChevronLast } from 'lucide-react';
 
-export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMenuOpen }) {
+export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMenuOpen, SetNoShowMenuOpen }) {
     {
         var [ActionData, setActionData] = useState({})
 
@@ -20,7 +20,7 @@ export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMe
                     <div className="TodoMenu_row">
                         <div className="TodoMenu_list">
                             <div className="TodoMenu_list_line">
-                                <ChevronLast className='arrowRight' />
+                                <ChevronLast className='arrowRight' onClick={() => SetNoShowMenuOpen(false)} />
                                 <h1 className='headerTextMenu'>Комната:</h1>
                                 <b className='textMenu'> {ActionData['TodoMenu_name'] ? ActionData['TodoMenu_name'] : ''}</b>
 

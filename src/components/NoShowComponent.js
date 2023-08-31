@@ -13,6 +13,7 @@ export const NoShowComponent = () => {
         NoShowMenuData={NoShowMenuData}
         setNoShowMenuData={setNoShowMenuData}
         NoShowMenuOpen={NoShowMenuOpen}
+        setNoShowMenuOpen={setNoShowMenuOpen}
       />
 
       <NoShow 

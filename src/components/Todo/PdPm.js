@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, PlusSquare } from 'lucide-react';
+import { Trash2, Pencil, PlusCircle } from 'lucide-react';
 import { DateFormatted } from '../../helpers/helper';
 
-export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuOpen }) => {
+export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setNoPmPdMenuOpen, NoPmPdMenuOpen }) => {
 
     
     const [pmTodo, SetPmlist] = useState([
@@ -65,7 +65,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
             type: "PD",
             data: pdTodo[number],
         });
-        setPmPdMenuOpen(true);
+        setNoPmPdMenuOpen(true);
     };
 
     async function openPmPdMenuu(number) {
@@ -73,7 +73,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
             type: "PM",
             data: pmTodo[number],
         });
-        setPmPdMenuOpen(true);
+        setNoPmPdMenuOpen(true);
     };
     
   return (
@@ -83,7 +83,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
                 <h1>
                     PD
                 </h1>
-                <PlusSquare className='blockControlHeader_icon' />
+                  <PlusCircle className='blockControlHeader_icon' />
             </div>
             <div className='bodyInfoRow'>
             {pdTodo.map((item, i) => (
@@ -96,7 +96,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
                         {item.comment}
                     </div>
                     <div className='boxEnd'>
-                        <p>25/08</p>
+                        <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                         <div className='boxEndIcon'>
                             <Pencil size={20} className="icon" />
                             <Trash2 size={20} className="icon" />
@@ -112,7 +112,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
                 <h1>
                     PM
                 </h1>
-                <PlusSquare className='blockControlHeader_icon' />
+                  <PlusCircle className='blockControlHeader_icon' />
             </div>
             {pmTodo.map((item, i) => (
                 <div className='box' key={i} onClick={() => openPmPdMenuu(i)}>
@@ -124,7 +124,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setPmPdMenuOpen, PmPdMenuO
                         {item.comment}
                     </div>
                     <div className='boxEnd'>
-                        <p>25/08</p>
+                        <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                         <div className='boxEndIcon'>
                             <Pencil size={20} className="icon" />
                             <Trash2 size={20} className="icon" />

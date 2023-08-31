@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, PlusSquare  } from 'lucide-react';
+import { Trash2, Pencil, PlusCircle  } from 'lucide-react';
 import { DateFormatted } from '../../helpers/helper';
 
 const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen}) => {
@@ -26,13 +26,12 @@ const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOp
     };
 
     return (
-
         <div className='blockControl'>
             <div className='blockControlHeader'>
                 <h1>
                     Контроль оплаты
                 </h1>
-                <PlusSquare className='blockControlHeader_icon' />
+                <PlusCircle className='blockControlHeader_icon' />
             </div>
             <div className='bodyInfoRow'>
             {todoLists.map((item, i) => (
@@ -45,7 +44,7 @@ const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOp
                         {item.comment}
                     </div>
                     <div className='boxEnd'>
-                        <p>25/08</p>
+                        <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                         <div className='boxEndIcon'>
                             <Pencil size={20} className="icon" />
                             <Trash2 size={20} className="icon" />

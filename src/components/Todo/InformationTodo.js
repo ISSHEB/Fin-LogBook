@@ -42,7 +42,7 @@ export default function InformationTodo() {
                             </div>
                             <div className="boxBodyInfo">{item.comment}</div>
                             <div className="boxEnd">
-                                <p>{(() => new Date(item.date).customFormat("#DD#/#MM#/#YYYY#"))}</p>
+                                <p className='TodoMenu_row_text'>{(() => new Date(item.date).customFormat("#DD#/#MM#/#YYYY#"))}</p>
                                 <div className="boxEndIcon">
                                     <Pencil size={20} className="icon" />
                                     <Trash2 size={20} className="icon" />

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import PmPdMenu from './menu/PmPdMenu'
 
 export const PdComponent = () => {
-  const [PmPdMenuData, setPmPdMenuData] = useState({});
+  const [PmPdMenuData, setPmPdMenuData]     = useState({});
   const [NoPmPdMenuOpen, setNoPmPdMenuOpen] = useState(false);
 
   return (
@@ -12,6 +12,7 @@ export const PdComponent = () => {
         PmPdMenuData={PmPdMenuData}
         setPmPdMenuData={setPmPdMenuData}
         NoPmPdMenuOpen={NoPmPdMenuOpen}
+        setNoPmPdMenuOpen={setNoPmPdMenuOpen}
       />
       <PdPm
         PmPdMenuData={PmPdMenuData}

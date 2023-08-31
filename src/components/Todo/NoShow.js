@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, PlusSquare } from 'lucide-react';
+import { Trash2, Pencil, PlusCircle } from 'lucide-react';
 
 export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, NoShowMenuOpen }) => {
     const [todoNoShow, setTodoNoshow,] = useState([
@@ -38,7 +38,7 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
                     <h1>
                        No Show
                     </h1>
-                    <PlusSquare className='blockControlHeader_icon' />
+                    <PlusCircle className='blockControlHeader_icon' />
                 </div>
                 <div className='bodyInfoRow'>
                     {todoNoShow.map((item, i) => (
@@ -76,7 +76,7 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
                             </div>
 
                             <div className='boxEnd'>
-                                <p>25/08</p>
+                                <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                                 <div className='boxEndIcon'>
                                     <Pencil size={20} className="icon" />
                                     <Trash2 size={20} className="icon" />

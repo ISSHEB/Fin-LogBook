@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Trash2, Pencil, PlusSquare } from 'lucide-react';
+import { Trash2, Pencil, PlusCircle } from 'lucide-react';
 
 const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen }) => {
     const [todoOther, setTodoOther] = useState([
@@ -27,7 +27,7 @@ const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen
               <h1 className='m-10'>
                   Прочие
               </h1>
-              <PlusSquare className='blockControlHeader_icon' />
+              <PlusCircle className='blockControlHeader_icon' />
           </div>
           <div className='bodyInfoRow'>
           {todoOther.map((item, i) => (
@@ -40,7 +40,7 @@ const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen
                       {item.text}
                   </div>
                   <div className='boxEnd'>
-                      <p>25/08</p>
+                      <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                       <div className='boxEndIcon'>
                           <Pencil size={20} className="icon" />
                           <Trash2 size={20} className="icon" />

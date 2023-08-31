@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronLast } from 'lucide-react';
 
-export default function TodoMenu({ TodoMenuData, setTodoMenuData, TodoMenuOpen }) {
+export default function TodoMenu({ TodoMenuData, setTodoMenuData, TodoMenuOpen, SetTodoMenuOpen }) {
     var [ActionData, setActionData] = useState({})
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export default function TodoMenu({ TodoMenuData, setTodoMenuData, TodoMenuOpen }
                     
                     <div className="TodoMenu_list">
                         <div className="TodoMenu_list_line">
-                            <ChevronLast className='arrowRight' />
+                            <ChevronLast className='arrowRight' onClick={() => SetTodoMenuOpen(false)} />
                             <h1 className='headerTextMenu'>Комната:</h1>
                             <b className='textMenu'> {ActionData['TodoMenu_name'] ? ActionData['TodoMenu_name'] : ''}</b>
 
