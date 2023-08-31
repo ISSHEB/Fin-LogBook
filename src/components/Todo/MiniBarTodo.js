@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, Martini } from 'lucide-react';
+import { Trash2, Pencil, PlusSquare } from 'lucide-react';
 
-const MiniBarTodo = () => {
+const MiniBarTodo = ({ TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen }) => {
 
 
   const [todoMinibar, SetTodoMinibar] = useState([
@@ -17,6 +17,13 @@ const MiniBarTodo = () => {
     },
   ])
 
+  async function openTodoMenu(number) {
+    setTodoMenuData({
+      type: "minibar",
+      data: todoMinibar[number],
+    });
+    setTodoMenuOpen(true);
+  };
  
   return (
     <div className='blockControl'>
@@ -24,10 +31,11 @@ const MiniBarTodo = () => {
         <h1 className='m-10'>
           Минибар
         </h1>
-        
+        <PlusSquare className='blockControlHeader_icon' />
       </div>
-      {todoMinibar.map((item) => (
-        <div className='box' key={item.roomNumber}>
+      <div className='bodyInfoRow'>
+      {todoMinibar.map((item, i) => (
+        <div className='box' key={item.roomNumber} onClick={() => openTodoMenu(i)}>
           <div className='boxHeader'>
             <h6>Комнатa: <b className='boxHeaderText'>{item.roomNumber}</b></h6>
             <p>К отплате: <b>{item.sum}</b></p>
@@ -42,6 +50,7 @@ const MiniBarTodo = () => {
           </div>
         </div>
       ))}
+      </div>
     </div>
   )
 }

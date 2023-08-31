@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NoShow } from './Todo/NoShow'
+import NoShowMenu from './menu/NoShowMenu';
 
 export const NoShowComponent = () => {
+  const [NoShowMenuData, setNoShowMenuData] = useState({});
+  const [NoShowMenuOpen, setNoShowMenuOpen] = useState(false);
+  
   return (
-    <div>
-    <NoShow/>
+    
+    <div> 
+      <NoShowMenu
+        NoShowMenuData={NoShowMenuData}
+        setNoShowMenuData={setNoShowMenuData}
+        NoShowMenuOpen={NoShowMenuOpen}
+      />
+
+      <NoShow 
+        NoShowMenuOpen={NoShowMenuOpen}
+        NoShowMenuData={NoShowMenuData}
+        setNoShowMenuData={setNoShowMenuData}
+        setNoShowMenuOpen={setNoShowMenuOpen} />
     </div>
   )
 }

@@ -7,7 +7,6 @@ import { ControlPaymant } from './components/ControlPaymant';
 import { Information } from './components/Information'
 import { NoShowComponent } from './components/NoShowComponent'
 import { PdComponent } from './components/PdComponent'
-import { PmComponent } from './components/PmComponent'
 import { MiniIfoComponent } from './components/MiniIfoComponent'
 import { SettingsPage } from './components/Settings';
 import { Help } from './components/Help'
@@ -26,9 +25,6 @@ function App()
             
         />,
         '/pd': <PdComponent 
-            
-        />,
-        '/pm': <PmComponent 
             
         />,
         '/Miniinfo': <MiniIfoComponent 
@@ -57,11 +53,9 @@ function App()
                     <SidebarItem icon={<UserCircle size={20} />} text="No show" />
                 </span>
                 <span onClick={(() => setPageData('/pd'))}>
-                    <SidebarItem icon={<Boxes size={20} />} text="Pd" />
+                    <SidebarItem icon={<Boxes size={20} />} text="Pd / Pm" />
                 </span>
-                <span onClick={(() => setPageData('/pm'))}>
-                    <SidebarItem icon={<Boxes size={20} />} text="Pm" />
-                </span>
+                
                 <span onClick={(() => setPageData('/Miniinfo'))}>
                     <SidebarItem icon={<Info size={20} />} text="Доп. инфо" /> <hr className="my-3" />
                 </span>

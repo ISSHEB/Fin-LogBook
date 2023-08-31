@@ -8,10 +8,10 @@ export default function Sidebar({ children }) {
 
     return (
         <aside className="h-screen">
-            <nav className="h-full flex flex-col bg-white border-r shadow-sm sidebar_new">
+            <nav className="h-full flex flex-col bg-white border-r shadow-sm sidebar_new" style={{ width: expanded ? "300px" : "70px", transition: "all .5s" }}>
                 <div className="p-4 pb-2 flex justify-between items-center">
-                    <h1 className="w-10 h-10 rounded-md">
-                        LogBook
+                    <h1 className="w-10 h-10 rounded-md blockControlHeader">
+                        {expanded ? "LogBook" : ""}
                     </h1>
                     <button
                         onClick={() => setExpanded((curr) => !curr)}
@@ -44,9 +44,9 @@ export function SidebarItem({ icon, text, active, alert }) {
                 font-medium rounded-md cursor-pointer
                 transition-colors group
                 ${active
-                            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-                            : "hover:bg-indigo-50 text-gray-600"
-                        }
+                    ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                    : "hover:bg-indigo-50 text-gray-600"
+                }
             `}
         >
             {icon}

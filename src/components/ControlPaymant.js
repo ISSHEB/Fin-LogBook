@@ -2,12 +2,15 @@ import React, {useState} from 'react'
 import ControlTodo from './Todo/ControlTodo'
 import MiniBarTodo from './Todo/MiniBarTodo'
 import OtherTodo from './Todo/OtherTodo'
-import TodoMenu from './TodoMenu';
+import TodoMenu from './menu/TodoMenu';
+
 
 export const ControlPaymant = () => 
 {
     const [TodoMenuData, setTodoMenuData] = useState({});
     const [TodoMenuOpen, setTodoMenuOpen] = useState(false);
+
+    
 
     return (
         <>
@@ -23,6 +26,7 @@ export const ControlPaymant = () =>
                         setTodoMenuData={setTodoMenuData}
                         setTodoMenuOpen={setTodoMenuOpen}
                         TodoMenuOpen={TodoMenuOpen}
+                        
                     />
                     <MiniBarTodo 
                         TodoMenuData={TodoMenuData}
@@ -35,13 +39,12 @@ export const ControlPaymant = () =>
                         setTodoMenuData={setTodoMenuData}
                         setTodoMenuOpen={setTodoMenuOpen}
                         TodoMenuOpen={TodoMenuOpen}
+
                     />
                 </div>
 
             </div>
-            <div className='endControl'>
-
-            </div>
+            
         </>
     )
 }

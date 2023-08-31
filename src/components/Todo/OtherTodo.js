@@ -1,28 +1,39 @@
 import React,{useState} from 'react'
-import { Trash2, Pencil, AlertCircle } from 'lucide-react';
+import { Trash2, Pencil, PlusSquare } from 'lucide-react';
 
-const OtherTodo = () => {
+const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen }) => {
     const [todoOther, setTodoOther] = useState([
         {
-            title: "504",
+            roomNumber: "504",
             text: "forgot t-shirt",
         },
         {
-            title: "Max",
-            text: "Upgrade",
+            roomNumber: "Max",
+            comment: "Upgrade",
         },
     ])
+
+    async function openTodoMenu(number) {
+        setTodoMenuData({
+            type: "todoOther",
+            comment: todoOther[number],
+        });
+        setTodoMenuOpen(true);
+    };
+
   return (
       <div className='blockControl'>
           <div className='blockControlHeader'>
               <h1 className='m-10'>
                   Прочие
               </h1>
+              <PlusSquare className='blockControlHeader_icon' />
           </div>
-          {todoOther.map((item) => (
-              <div className='box' key={item.roomNumber}>
+          <div className='bodyInfoRow'>
+          {todoOther.map((item, i) => (
+              <div className='box' key={item.roomNumber} onClick={() => openTodoMenu(i)}>
                   <div className='boxHeader'>
-                      <h6>Комнатa: <b className='boxHeaderText'>{item.title}</b></h6>
+                      <h6>Комнатa: <b className='boxHeaderText'>{item.roomNumber}</b></h6>
                       {/* <p>До: <b>{item.data}</b></p> */}
                   </div>
                   <div className='boxBody'>
@@ -37,6 +48,7 @@ const OtherTodo = () => {
                   </div>
               </div>
           ))}
+          </div>
       </div>
   )
 }

@@ -1,34 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { Trash2, Pencil, PlusSquare } from "lucide-react";
+import { Trash2, Pencil,} from "lucide-react";
 
-export default function InformationTodo() {
+export default function InfoMini() {
 
-    const [todoInfo, setTodoInfo]       = useState([]);
-    const [test, setTest]               = useState(null);
-    const [FormInp, setFormInp]         = useState("");
-	const [FormInp2, setFormInp2]       = useState("");
-    
-    function setNewData()
-    {
+    const [todoInfo, setTodoInfo] = useState([]);
+    const [test, setTest] = useState(null);
+    const [FormInp, setFormInp] = useState("");
+    const [FormInp2, setFormInp2] = useState("");
+
+    function setNewData() {
         var newTodoInfo = [];
 
-        for(var element of todoInfo)
-        {
+        for (var element of todoInfo) {
             newTodoInfo.push(element);
         };
 
         newTodoInfo.push({
-			roomNumber: FormInp,
-			comment: FormInp2,
-		});
+            roomNumber: FormInp,
+            comment: FormInp2,
+        });
 
         setTodoInfo(newTodoInfo);
     };
 
-    return(
+    return (
         <div className="blockInfo">
             <div className="blockInfoHeader">
-                <h1>Информации</h1>
+                <h1>Дополнительная информация</h1>
                 {/* <PlusSquare className='blockControlHeader_icon' /> */}
             </div>
             <div className="bodyInfo">
@@ -51,8 +49,8 @@ export default function InformationTodo() {
                         </div>
                     ))}
                 </div>
-                
-               
+
+
                 <aside className="form">
                     <input onChange={((e) => setFormInp(e.target.value))} className="formInp" placeholder="Номер комнаты" />
                     <textarea onChange={((e) => setFormInp2(e.target.value))} className="formInp2" placeholder="Информация"></textarea>

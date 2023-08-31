@@ -1,7 +1,8 @@
 import React from 'react'
+import InfoMini from './Todo/InfoMini'
 
 export const MiniIfoComponent = () => {
   return (
-    <div>MiniIfoComponent</div>
+    <div><InfoMini/></div>
   )
 }

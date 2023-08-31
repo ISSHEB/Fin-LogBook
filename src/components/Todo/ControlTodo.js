@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, CircleDollarSign } from 'lucide-react';
+import { Trash2, Pencil, PlusSquare  } from 'lucide-react';
 import { DateFormatted } from '../../helpers/helper';
 
 const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen}) => {
@@ -8,7 +8,6 @@ const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOp
             roomNumber: "618",
             date: new Date().getTime().toString(),
             comment: "что-то случилось",
-            paymantTo: ''
         },
         {
             roomNumber: "545",
@@ -33,8 +32,9 @@ const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOp
                 <h1>
                     Контроль оплаты
                 </h1>
-
+                <PlusSquare className='blockControlHeader_icon' />
             </div>
+            <div className='bodyInfoRow'>
             {todoLists.map((item, i) => (
                 <div className='box' key={i} onClick={() => openTodoMenu(i)}>
                     <div className='boxHeader'>
@@ -53,6 +53,7 @@ const ControlTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOp
                     </div>
                 </div>
             ))}
+            </div>
         </div>
 
     )
