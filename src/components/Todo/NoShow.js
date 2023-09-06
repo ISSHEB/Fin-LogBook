@@ -4,7 +4,6 @@ import { Trash2, Pencil, PlusCircle } from 'lucide-react';
 export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, NoShowMenuOpen }) => {
     const [todoNoShow, setTodoNoshow,] = useState([
         {
-            id: '1',
             roomNumber: "618",
             firstName: "Grigori",
             date: '02.07.2023',
@@ -14,13 +13,12 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
             comment: "что-то случилось",
         },
         {
-            id: '2',
-            roomNumber: '61ыв',
-            firstName: 'ысвс',
-            date: '02.07.2023вы',
-            reservationNumber: 'ыв4945123',
-            firstNightCost: '7000ы',
-            totalCost: '14000ыы',
+            roomNumber: '754',
+            firstName: 'саша',
+            date: '02.07.2023в',
+            reservationNumber: '4945123',
+            firstNightCost: '65500',
+            totalCost: '28500',
             comment: 'что-то слвучилось',
         },
     ]);
@@ -31,6 +29,12 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
         });
         setNoShowMenuOpen(true);
     };
+
+    const deleteTodo = (roomNumber) => {
+        const updatedList = todoNoShow.filter((item) => item.roomNumber !== roomNumber);
+        setTodoNoshow(updatedList);
+    };
+
     return (
         <>
             <div><div className='blockInfo'>
@@ -38,38 +42,46 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
                     <h1>
                        No Show
                     </h1>
-                    <PlusCircle className='blockControlHeader_icon' />
+                    <PlusCircle className='blockControlHeader_icon' onClick={() => setTodoNoshow([...todoNoShow, {
+                        roomNumber: '754',
+                        firstName: 'саша',
+                        date: '02.07.2023в',
+                        reservationNumber: '4945123',
+                        firstNightCost: '65500',
+                        totalCost: '28500',
+                        comment: 'что-то слвучилось',
+                    }])} />
                 </div>
                 <div className='bodyInfoRow'>
                     {todoNoShow.map((item, i) => (
                         <div className='boxInfo' onClick={() => openNoShowMenu(i)}>
-                            <div className='bodyNoShow' key={item.id}>
+                            <div className='bodyNoShow' key={item.roomNumber}>
                                 <div className='bodyNoShowInfo'>
                                     <b>Комната</b>
                                     <p>{item.roomNumber}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Фамилия</b>
                                     <p>{item.firstName}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Дата</b>
                                     <p>{item.date}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Бронирование</b>
                                     <p>{item.reservationNumber}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Первая ночь</b>
                                     <p>{item.firstNightCost}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Общая стоимось</b>
                                     <p>{item.totalCost}</p>
                                 </div>
                                 <div className='bodyNoShowInfo'>
-                                    <b>Комната</b>
+                                    <b>Коментарий</b>
                                     <p>{item.comment}</p>
                                 </div>
 
@@ -78,8 +90,7 @@ export const NoShow = ({ NoShowMenuData, setNoShowMenuData, setNoShowMenuOpen, N
                             <div className='boxEnd'>
                                 <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                                 <div className='boxEndIcon'>
-                                    <Pencil size={20} className="icon" />
-                                    <Trash2 size={20} className="icon" />
+                                    <Trash2 size={20} className="icon" onClick={() => deleteTodo(item.roomNumber)}/>
                                 </div>
                             </div>
                         </div>

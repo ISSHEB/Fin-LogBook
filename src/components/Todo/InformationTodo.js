@@ -25,6 +25,11 @@ export default function InformationTodo() {
         setTodoInfo(newTodoInfo);
     };
 
+    const deleteTodo = (roomNumber) => {
+        const updatedList = todoInfo.filter((item) => item.roomNumber !== roomNumber);
+        setTodoInfo(updatedList);
+    };
+
     return(
         <div className="blockInfo">
             <div className="blockInfoHeader">
@@ -45,7 +50,7 @@ export default function InformationTodo() {
                                 <p className='TodoMenu_row_text'>{(() => new Date(item.date).customFormat("#DD#/#MM#/#YYYY#"))}</p>
                                 <div className="boxEndIcon">
                                     <Pencil size={20} className="icon" />
-                                    <Trash2 size={20} className="icon" />
+                                    <Trash2 size={20} className="icon" onClick={() => deleteTodo(item.roomNumber)} />
                                 </div>
                             </div>
                         </div>

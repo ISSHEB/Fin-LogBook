@@ -76,6 +76,11 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setNoPmPdMenuOpen, NoPmPdM
         setNoPmPdMenuOpen(true);
     };
     
+    const deleteTodo = (roomNumber) => {
+        const updatedList = pmTodo.filter((item) => item.roomNumber !== roomNumber);
+        SetPmlist(updatedList);
+    };
+
   return (
       <div className='flex'>
         <div className='blockControl'>
@@ -114,6 +119,7 @@ export const PdPm = ({ PmPdMenuData, setPmPdMenuData, setNoPmPdMenuOpen, NoPmPdM
                 </h1>
                   <PlusCircle className='blockControlHeader_icon' />
             </div>
+            
             {pmTodo.map((item, i) => (
                 <div className='box' key={i} onClick={() => openPmPdMenuu(i)}>
                     <div className='boxHeader'>

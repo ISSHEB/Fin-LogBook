@@ -31,7 +31,6 @@ export default function ({ PmPdMenuData, setPmPdMenuData, NoPmPdMenuOpen, setNoP
 
             <div className="TodoMenu" style={{ right: `${NoPmPdMenuOpen ? '0' : "-100%"}` }}>
                 <div className="TodoMenu_row">
-
                     <div className="TodoMenu_list">
                         <div className="TodoMenu_list_line">
                             <ChevronLast className='arrowRight' onClick={() => setNoPmPdMenuOpen(false)} />

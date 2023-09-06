@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import {  ChevronLast } from 'lucide-react';
 
-export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMenuOpen, SetNoShowMenuOpen }) {
+export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMenuOpen, SetNoShowMenuOpen, setNoShowMenuOpen }) {
     {
         var [ActionData, setActionData] = useState({})
+        
 
         useEffect(() => {
             if (NoShowMenuData.type == "No Show") {
@@ -20,7 +21,7 @@ export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMe
                     <div className="TodoMenu_row">
                         <div className="TodoMenu_list">
                             <div className="TodoMenu_list_line">
-                                <ChevronLast className='arrowRight' onClick={() => SetNoShowMenuOpen(false)} />
+                                <ChevronLast className='arrowRight' onClick={() => setNoShowMenuOpen(false)} />
                                 <h1 className='headerTextMenu'>Комната:</h1>
                                 <b className='textMenu'> {ActionData['TodoMenu_name'] ? ActionData['TodoMenu_name'] : ''}</b>
 
@@ -37,18 +38,26 @@ export default function NoShowMenu({ NoShowMenuData, setNoShowMenuData, NoShowMe
                         </div>
                         <div className="TodoMenu_name">
                             <div className="divInput">
-                                <input placeholder='+ Номер комнаты' />
+                                <input placeholder=' Номер комнаты' />
                             </div>
                             <div className="divInput">
-                                <input placeholder='+ Оплата до' />
+                                <input placeholder=' Фамилия' />
                             </div>
                             <div className="divInput">
-                                <input placeholder='+ Коментарии' />
+                                <input placeholder=' Дата' />
                             </div>
-
-
-
-
+                            <div className="divInput">
+                                <input placeholder=' Бронирование' />
+                            </div>
+                            <div className="divInput">
+                                <input placeholder=' Первая ночь' />
+                            </div>
+                            <div className="divInput">
+                                <input placeholder=' Общая Стоимось' />
+                            </div>
+                            <div className="divInput">
+                                <input placeholder=' Коментарии' />
+                            </div>
                         </div>
                     </div>
                 </div>

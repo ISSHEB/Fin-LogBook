@@ -20,6 +20,10 @@ const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen
         });
         setTodoMenuOpen(true);
     };
+    const deleteTodo = (roomNumber) => {
+        const updatedList = todoOther.filter((item) => item.roomNumber !== roomNumber);
+        setTodoOther(updatedList);
+    };
 
   return (
       <div className='blockControl'>
@@ -27,7 +31,7 @@ const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen
               <h1 className='m-10'>
                   Прочие
               </h1>
-              <PlusCircle className='blockControlHeader_icon' />
+              <PlusCircle className='blockControlHeader_icon' onClick={() => setTodoMenuOpen(true)} />
           </div>
           <div className='bodyInfoRow'>
           {todoOther.map((item, i) => (
@@ -42,8 +46,7 @@ const OtherTodo = ({TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen
                   <div className='boxEnd'>
                       <p className='TodoMenu_row_text'>августь 31/08 20:25</p>
                       <div className='boxEndIcon'>
-                          <Pencil size={20} className="icon" />
-                          <Trash2 size={20} className="icon" />
+                          <Trash2 size={20} className="icon" onClick={() => deleteTodo(item.roomNumber)} />
                       </div>
                   </div>
               </div>

@@ -10,8 +10,6 @@ export const ControlPaymant = () =>
     const [TodoMenuData, setTodoMenuData] = useState({});
     const [TodoMenuOpen, setTodoMenuOpen] = useState(false);
 
-    
-
     return (
         <>
             <TodoMenu 
@@ -19,6 +17,8 @@ export const ControlPaymant = () =>
                 setTodoMenuData={setTodoMenuData}
                 TodoMenuOpen={TodoMenuOpen}
                 setTodoMenuOpen={setTodoMenuOpen}
+                handleDataUpdate={handleDataUpdate}
+                setData={setData}
             />
             <div>
                 <div className='bodyControl'>
@@ -27,7 +27,7 @@ export const ControlPaymant = () =>
                         setTodoMenuData={setTodoMenuData}
                         setTodoMenuOpen={setTodoMenuOpen}
                         TodoMenuOpen={TodoMenuOpen}
-                        
+    
                     />
                     <MiniBarTodo 
                         TodoMenuData={TodoMenuData}
@@ -48,4 +48,4 @@ export const ControlPaymant = () =>
             
         </>
     )
-}
+}  
