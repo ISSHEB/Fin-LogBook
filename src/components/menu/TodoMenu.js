@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronLast } from 'lucide-react';
 
-export default function TodoMenu({ TodoMenuData, TodoMenuOpen, setTodoMenuOpen, handleDataUpdate }) {
+export default function TodoMenu({ TodoMenuData, TodoMenuOpen, setTodoMenuOpen,  }) {
 
     var [ActionData, setActionData] = useState({})
-    const [inputValue1, setInputValue1] = useState('');
-    const [inputValue2, setInputValue2] = useState('');
-    const [inputValue3, setInputValue3] = useState('');
+    
 
     useEffect(() => {
         if (TodoMenuData.type == "control payment") {
@@ -38,17 +36,7 @@ export default function TodoMenu({ TodoMenuData, TodoMenuOpen, setTodoMenuOpen, 
         };
     }, [TodoMenuData]);
 
-    const handleInputChange1 = (e) => {
-        setInputValue1(e.target.value);
-    };
 
-    const handleInputChange2 = (e) => {
-        setInputValue2(e.target.value);
-    };
-
-    const handleInputChange3 = (e) => {
-        setInputValue3(e.target.value);
-    };
 
     return (
         <>
@@ -76,18 +64,18 @@ export default function TodoMenu({ TodoMenuData, TodoMenuOpen, setTodoMenuOpen, 
                     <div className="TodoMenu_name">
 
                         <div className="divInput">
-                            <input placeholder=' Номер комнаты' onChange={handleInputChange1} value={inputValue1} />
+                            <input placeholder=' Номер комнаты'  />
                         </div>
                         {
                             TodoMenuData.type == "control payment" ?
                                 <div className="divInput">
-                                    <input placeholder=' Оплата до' onChange={handleInputChange2} value={inputValue2} />
+                                    <input placeholder=' Оплата до' />
                                 </div>
                                 : <></>
                         }
 
                         <div className="divInput">
-                            <textarea placeholder=' Коментарии' onChange={handleInputChange3} value={inputValue3} />
+                            <textarea placeholder=' Коментарии'  />
                         </div>
                     </div>
                 </div>

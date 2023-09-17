@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Trash2, Pencil, PlusCircle } from 'lucide-react';
+import { Trash2, PlusCircle } from 'lucide-react';
 import { DateFormatted } from '../../helpers/helper';
 
 const ControlTodo = ({ TodoMenuData, setTodoMenuData, setTodoMenuOpen, TodoMenuOpen }) => {

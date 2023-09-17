@@ -17,8 +17,8 @@ export const ControlPaymant = () =>
                 setTodoMenuData={setTodoMenuData}
                 TodoMenuOpen={TodoMenuOpen}
                 setTodoMenuOpen={setTodoMenuOpen}
-                handleDataUpdate={handleDataUpdate}
-                setData={setData}
+                
+                
             />
             <div>
                 <div className='bodyControl'>
